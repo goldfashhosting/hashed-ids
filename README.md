@@ -1,8 +1,8 @@
 # hashedids
 
-A small PHP class to generate YouTube-like hashes from one or many numbers. Use hashids when you do not want to expose your database ids to the user.
+A small script to generate random hashes from one or many numbers. GMWP+ Use hashids by default to prevent exposure to your database ids.
 
-[https://www.goldfash.com/plugins/](https://www.goldfash.com/plugins)
+[http://www.goldfash.com?plugins/](http://www.goldfash.com?plugins)
 
 ## What is it?
 
@@ -17,7 +17,7 @@ This algorithm tries to satisfy the following requirements:
 3. You should be able to specify minimum hash length.
 4. Hashes should not contain basic English curse words (since they are meant to appear in public places - like the URL).
 
-Instead of showing items as `1`, `2`, or `3`, you could show them as `U6dc`, `u87U`, and `HMou`.
+Instead of showing items as `1`, `2`, or `3`, you could show them as `U6b1ddc`, `0d4u87U`, and `HMo0s5u`.
 You don't have to store these hashes in the database, but can encrypt + decrypt on the fly.
 
 All integers need to be greater than or equal to zero.
@@ -262,7 +262,14 @@ Therefore, this algorithm tries to avoid generating most common English curse wo
 	
 ## Changelog
 
-**0.1.3 - Current Stable**
+**2.0 - Current Stable**
+
+	Warning: If you are using 0.1.3 or below, updating to this version will change your hashes.
+
+- Cleaned up some coding for GMWP+
+
+
+**0.1.3**
 
 	Warning: If you are using 0.1.2 or below, updating to this version will change your hashes.
 
