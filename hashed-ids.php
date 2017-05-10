@@ -1,15 +1,15 @@
 <?php
 /**
  * @package GoldFash Hashed IDs
- * @version 1.0
+ * @version 2.0
  */
 /*
 Plugin Name: Hashed-ids
-Plugin URL: https://goldfash.com:443/plugins
+Plugin URL: http://goldfash.com?plugins
 Description: Link Hashing and Encrypting
-Version: 1.0
+Version: 2.0
 Author: GoldFash Design
-Author URI:        https://goldfash.com:443/
+Author URI:        http://goldfash.com/
 Contributors:      raceanf
 Domain Path:       /languages
 Text Domain:       hashed-ids
@@ -19,14 +19,14 @@ GitHub Branch:     master
 
 require_once('hashids/lib/hashids.php-5-3.php');
 
-define ('HASHED_IDS_MIN_LENGTH', 37);
+define ('HASHED_IDS_MIN_LENGTH', 7);
 
 function hashed_id() {
     global $wp_rewrite;
     add_rewrite_tag('%hashed_id%','([^/]+)');
     $permalink = $wp_rewrite->permalink_structure;
     if (!empty($permalink) && false !== strpos( $permalink, '%hashed_id%' )) {
-        add_filter('pre_post_link', '_hashed_id_post_link', 37, 2);
+        add_filter('pre_post_link', '_hashed_id_post_link', 7, 2);
         add_filter('parse_request', '_hashed_id_parse_request');
     }
 }
